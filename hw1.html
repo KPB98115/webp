@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="hw1.css">
+</head>
+<body>
+    <script>
+        document.addEventListener("DOMContentLoaded", displayWindowSize);
+        function displayWindowSize(){
+            const width = window.innerWidth;
+            const height = window.innerHeight;
+            document.getElementById("width").innerHTML = width;
+            document.getElementById("height").innerHTML = height;
+        }
+        window.addEventListener("resize", displayWindowSize);
+    </script>
+    <div class="container">
+        <p class="title">Web application design<br>Homework 1</p>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQvhss1dREIsxtFFDEkgtEIarxsduFgwNKP0mZQu-_HUBhr0eIU8nzu1rBR6Bpt-Ysms2s&usqp=CAU" alt="">
+        <div class="windowSize">Current window size : <span id="width"></span> x <span id="height"></span>.</div>
+    </div>
+</body>
+</html>
