@@ -5,7 +5,7 @@
     font-size: 30px;
 }
 img {
-    width: 60%;
+    min-width: 30%;
 }
 .windowSize {
     font-size: 16px;
