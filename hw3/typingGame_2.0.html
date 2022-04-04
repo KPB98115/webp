@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #genText {
+            display: inline-block;
+            font-size: 36px;
+            color: gray;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        function typeWriter() {
+            function genOutput() {
+                function genText() {
+                    //generate random alphabet via ASCII char code
+                    return String.fromCharCode(0|Math.random()*26+97);
+                }
+                const text = document.getElementById("genText");
+                text.textContent = genText() + text.textContent;
+            }
+
+            const text = document.getElementById("genText");
+            const score = document.getElementById("scoreBoard");
+
+            text.textContent = "";
+            //automatically generate one charracter per 0.4 sec
+            window.setInterval(genOutput, 400);
+            document.addEventListener('keypress', (e) => {
+                const input = String.fromCharCode(e.charCode);
+                const lastCharacter = text.textContent.charAt(text.textContent.length-1);
+                if (input == lastCharacter) {
+                    const newText = text.textContent.slice(0, -1);
+                    text.textContent = newText;
+                    score.innerText = "" + (parseInt(score.innerText)+3);
+                }
+                else {
+                    score.innerText = "" + (parseInt(score.innerText)-1);
+                }
+            })
+        }
+    </script>
+    <div class="container">
+        <p id="title">Typewriter 2.0</p>
+    </div>
+    <div class="container">
+        <h1 id="genText">Typed correct +3 pt, incorrect -1 pt</h1><br>
+        <button id="startBtn" onclick="typeWriter()">Click to Start</button>
+        <span>Score: </span><span id="scoreBoard">10</span>
+    </div>
+</body>
+</html>
