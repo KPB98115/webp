@@ -34,15 +34,14 @@
             document.addEventListener('keypress', (e) => {
                 const input = String.fromCharCode(e.charCode);
                 const lastCharacter = text.textContent.charAt(text.textContent.length-1);
+                //Remove the button focus to prevent spacebar continue game
+                e.target.blur();
+                
                 if (input == lastCharacter) {
                     const newText = text.textContent.slice(0, -1);
                     text.textContent = newText;
                     score.innerText = "" + (parseInt(score.innerText)+3);
                     
-                }
-                else if (input == " ") {
-                    //check if user type space bar
-                    alert("Click to continue");
                 }
                 else {
                     score.innerText = "" + (parseInt(score.innerText)-1);
@@ -54,7 +53,7 @@
         <p id="title">Typewriter 2.0</p>
     </div>
     <div class="container">
-        <h1 id="genText">Typed correct +3 pt, incorrect -1 pt. Type space bar to pause</h1><br>
+        <h1 id="genText">Typed correct +3 pt, incorrect -1 pt</h1><br>
         <button id="startBtn" onclick="typeWriter()">Click to Start</button>
         <span>Score: </span><span id="scoreBoard">10</span>
     </div>
