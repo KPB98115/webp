@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Typeing Game 3.0</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("input").click(function () {
+                window.setInterval(function () {
+                    let alphabet = String.fromCharCode(0|Math.random()*26+97);
+                    var images = `<img src="image/${alphabet}.png" class="img1" id="${alphabet}"/>`;
+                    
+                    $("#track1").prepend(images);
+                    $("#track1" + alphabet).animate({
+                        left: 300
+                    }, 1000);
+                    if ($(".img1").last().offset().left > $(window).width()-175) {
+                        alert("gameover");
+                        window.location.reload();
+                    }
+                }, 1000);
+            });
+        });
+        $(document).keypress(function (e) {
+            e.target.blur();
+            if ($(".img1").last().attr("id") == String.fromCharCode(e.charCode)) {
+                $(".img1").last().remove();
+            }
+        });
+
+
+        $(document).ready(function () {
+            $("input").click(function () {
+                window.setInterval(function () {
+                    let alphabet = String.fromCharCode(0|Math.random()*26+97);
+                    var images = `<img src="image/${alphabet}.png" class="img2" id="${alphabet}"/>`;
+
+                    $("#track2").prepend(images);
+                    $("#track2" + alphabet).animate({
+                        left: 300
+                    }, 1000);
+                    if ($(".img2").last().offset().left > $(window).width()-175) {
+                        //$("#img2").stop();
+                        alert("gameover");
+                        window.location.reload();
+                    }
+                }, 1000);
+            });
+        });
+        $(document).keypress(function (e) {
+            e.target.blur();
+            if ($(".img2").last().attr("id") == String.fromCharCode(e.charCode)) {
+                $(".img2").last().remove();
+            }
+        });
+
+
+        $(document).ready(function () {
+            $("input").click(function () {
+                window.setInterval(function () {
+                    let alphabet = String.fromCharCode(0|Math.random()*26+97); 
+                    var images = `<img src="image/${alphabet}.png" class="img3" id="${alphabet}"/>`;
+
+                    $("#track3").prepend(images);
+                    $("#track3" + alphabet).animate({
+                        left: 300
+                    }, 1000);
+                    if ($(".img3").last().offset().left > $(window).width()-175) {
+                        alert("gameover");
+                        window.location.reload();
+                    }
+                }, 1000);
+            });
+        });
+        $(document).keypress(function (e) {
+            e.target.blur();
+            if ($(".img3").last().attr("id") == String.fromCharCode(e.charCode)) {
+                $(".img3").last().remove();
+            }
+        });
+
+        $(document).ready(function () {
+            $("input").click(function () {
+                window.setInterval(function () {
+
+                    let alphabet = String.fromCharCode(0|Math.random()*26+97);
+                    var images = `<img src="image/${alphabet}.png" class="img4" id="${alphabet}"/>`;
+                               
+                    $("#track4").prepend(images);
+                    $("#track4" + alphabet).animate({
+                        left: 300
+                    }, 1000);
+                    if ($(".img4").last().offset().left > $(window).width()-175) {
+                        alert("gameover");
+                        window.location.reload();
+                    }
+                }, 1000);
+            });
+        });
+        $(document).keypress(function (e) {
+            e.target.blur();
+            if ($(".img4").last().attr("id") == String.fromCharCode(e.charCode)) {
+                $(".img4").last().remove();
+            }
+        });
+
+        $(document).ready(function () {
+            $("input").click(function () {
+                window.setInterval(function () {
+                    let alphabet = String.fromCharCode(0|Math.random()*26+97);
+                    var images = `<img src="image/${alphabet}.png" class="img5" id="${alphabet}"/>`;
+                              
+                    $("#track5").prepend(images);
+                    $("#track5" + alphabet).animate({
+                        left: 300
+                    }, 2000);
+                    if ($(".img5").last().offset().left > $(window).width()-175) {
+                        alert("gameover");
+                        window.location.reload();
+                    }
+                }, 1000);
+            });
+        });
+        $(document).keypress(function (e) {
+            e.target.blur();
+            if ($(".img5").last().attr("id") == String.fromCharCode(e.charCode)) {
+                $(".img5").last().remove();
+            }
+        });
+
+        $(document).ready(function () {
+            $("input").click(function () {
+                window.setInterval(function () {
+                    let alphabet = String.fromCharCode(0|Math.random()*26+97);
+                    var images = `<img src="image/${alphabet}.png" class="img6" id="${alphabet}"/>`;
+                                
+                    $("#track6").prepend(images);
+                    $("#track6" + alphabet).animate({
+                        left: 300
+                    }, 1000);
+                    if ($(".img6").last().offset().left > $(window).width()-175) {
+                        alert("gameover");
+                        window.location.reload();
+                    }
+                }, 1000);
+            });
+        });
+        $(document).keypress(function (e) {
+            e.target.blur();
+            if ($(".img6").last().attr("id") == String.fromCharCode(e.charCode)) {
+                $(".img6").last().remove();
+            }
+        });
+    </script>
+    <style>
+        .track {
+            border: solid 1px orange;
+            min-height: 100px;
+            max-width: 100%;
+        }
+        h1 {
+            display: inline-grid;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input type="button" value="Click to Start" >
+        <div class="track" id="track1">
+            <p></p>
+        </div>
+        <div class="track" id="track2">
+            <p></p>
+        </div>
+
+        <div class="track" id="track3">
+            <p></p>
+        </div>
+
+        <div class="track" id="track4">
+            <p></p>
+
+        </div>
+        <div class="track" id="track5">
+            <p></p>
+
+        </div>
+        <div class="track" id="track6">
+            <p></p>
+
+        </div>
+    </div>
+</body>
+</html>
