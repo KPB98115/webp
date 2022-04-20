@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="hw5.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        Origin station: <select name="origin" id="origin">
+            <option value="defaclt">- - -</option>
+            <option value="A1">A1-台北車站</option>
+            <option value="A2">A2-三重站</option>
+            <option value="A3">A3-新北產業園區站</option>
+            <option value="A4">A4-新莊副都心站</option>
+            <option value="A5">A5-泰山站</option>
+            <option value="A6">A6-泰山貴和站</option>
+            <option value="A7">A7-體育大學站</option>
+            <option value="A8">A8-長庚醫院站</option>
+            <option value="A9">A9-林口站</option>
+            <option value="A10">A10-山鼻站</option>
+            <option value="A11">A11-坑口站</option>
+            <option value="A12">A12-機場第一航廈站</option>
+            <option value="A13">A13-機場第二航廈站</option>
+            <option value="A14">A14-機場第三航廈站</option>
+            <option value="A14a">A14a-機場旅館站</option>
+            <option value="A15">A15-大園站</option>
+            <option value="A16">A16-橫山站</option>
+            <option value="A17">A17-領航站</option>
+            <option value="A18">A18-高鐵桃園站</option>
+            <option value="A19">A19-桃園體育園區站</option>
+            <option value="A20">A20-興南站</option>
+            <option value="A21">A21-環北站</option>
+        </select>
+        Destination station: <select name="destination" id="destination">
+            <option value="defaclt">- - -</option>
+            <option value="A1">A1-台北車站</option>
+            <option value="A2">A2-三重站</option>
+            <option value="A3">A3-新北產業園區站</option>
+            <option value="A4">A4-新莊副都心站</option>
+            <option value="A5">A5-泰山站</option>
+            <option value="A6">A6-泰山貴和站</option>
+            <option value="A7">A7-體育大學站</option>
+            <option value="A8">A8-長庚醫院站</option>
+            <option value="A9">A9-林口站</option>
+            <option value="A10">A10-山鼻站</option>
+            <option value="A11">A11-坑口站</option>
+            <option value="A12">A12-機場第一航廈站</option>
+            <option value="A13">A13-機場第二航廈站</option>
+            <option value="A14">A14-機場第三航廈站</option>
+            <option value="A14a">A14a-機場旅館站</option>
+            <option value="A15">A15-大園站</option>
+            <option value="A16">A16-橫山站</option>
+            <option value="A17">A17-領航站</option>
+            <option value="A18">A18-高鐵桃園站</option>
+            <option value="A19">A19-桃園體育園區站</option>
+            <option value="A20">A20-興南站</option>
+            <option value="A21">A21-環北站</option>
+        </select>
+        <div id="result">
+            <span class="ticket_price">Ticket price: </span><span id="price"></span>
+            <br><span class="travel_time">Travel time: </span><span id="time"></span>
+        </div>
+        <button id="query_btn" onclick="myfunction()">Query</button>
+    </div>
+</body>
+</html>
