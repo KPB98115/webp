@@ -18,9 +18,14 @@ function myfunction() {
 
         $(".travel_time").text("--"+secToMin(data[0].TravelTimes[0].RunTime)+"->");
 
+        var currentTime = 0;
+
         for (let i=0; i<20; i++) {
             if (i != 19) {
-                var travelTime = secToMin(data[0].TravelTimes[i+1].RunTime);
+                currentTime = data[0].TravelTimes[i+1].RunTime - data[0].TravelTimes[i].RunTime;
+
+
+                var travelTime = secToMin(currentTime);
                 var stationName = data[0].TravelTimes[i].ToStationName.Zh_tw;
 
                 var newStation = `<h3 class="station">${stationName}</h3>`;
